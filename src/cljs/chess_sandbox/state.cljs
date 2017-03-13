@@ -4,7 +4,6 @@
       chess-sandbox.state
       (:require [chess-sandbox.util :as util]))
 
-
 (def move-counter (atom 0))
 
 ;; A portable notation for describing a position:
