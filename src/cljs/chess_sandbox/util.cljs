@@ -4,27 +4,33 @@
       chess-sandbox.util
       (:require clojure.set))
 
-(def str-pce {"K" [:white :king]
-              "Q" [:white :queen]
-              "R" [:white :rook]
-              "B" [:white :bishop]
-              "N" [:white :knight]
-              "P" [:white :pawn]
-              "k" [:black :king]
-              "q" [:black :queen]
-              "r" [:black :rook]
-              "b" [:black :bishop]
-              "n" [:black :knight]
-              "p" [:black :pawn]
-              "." nil})
+(def rep-to-piece 
+  {"K" [:white :king]
+   "Q" [:white :queen]
+   "R" [:white :rook]
+   "B" [:white :bishop]
+   "N" [:white :knight]
+   "P" [:white :pawn]
+   "k" [:black :king]
+   "q" [:black :queen]
+   "r" [:black :rook]
+   "b" [:black :bishop]
+   "n" [:black :knight]
+   "p" [:black :pawn]
+   "." nil})
 
-(def pce-str (clojure.set/map-invert str-pce))
+(def piece-to-rep (clojure.set/map-invert rep-to-piece))
 
 (defn string-to-squares
+    "Given a string representation of a board, return a sequence of where 
+    each element has the format [[x y] s] where [x y] is the coordinates of
+    a particular square and s is the string representation of the piece in
+    this square"
   [s]
   (map-indexed (fn [i x] [[(int (/ i 8)) (mod i 8)] x]) s))
 
 (defn string-to-position
+  "Given a string representation of a board, return a position"
   [s]
   (let [sqrs (string-to-squares s)]
     (apply 
@@ -32,8 +38,9 @@
       (mapcat 
         (fn 
           [[sqr rep]] 
-          [sqr (str-pce rep)]) sqrs))))
+          [sqr (rep-to-piece rep)]) sqrs))))
 
 (defn position-to-string
+  "Given a position, return a string representation of a board"
   [pos]
-    (apply str (map (fn [[x y]] (pce-str y)) (sort pos))))
+    (apply str (map (fn [[x y]] (piece-to-rep y)) (sort pos))))

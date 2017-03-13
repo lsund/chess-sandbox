@@ -3,6 +3,7 @@
       :doc    "Logger utilities"}
   chess-sandbox.logger
   (:require [goog.dom :as dom]
+            [clojure.string :as string]
             [chess-sandbox.state :as state]
             [chess-sandbox.util :as util]))
 
@@ -18,7 +19,11 @@
         capt (if dst-t "x" nil)]
     (if (= src-t :pawn)
       (if capt (str src-f capt dst-f dst-r) (str dst-f dst-r))
-      (str (util/pce-str [src-c src-t]) capt dst-f dst-r))))
+      (str 
+        (string/upper-case (util/piece-to-rep [src-c src-t]))
+        capt 
+        dst-f 
+        dst-r))))
 
 (defn move
   [src dst]
