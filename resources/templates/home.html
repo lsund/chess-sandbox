@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Welcome to chess-sandbox</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="app">
+        <div id="content">
+            <div id="board">
+                <canvas id=":mycanvas" width="480" height="480"></canvas>
+            </div>
+            <div id="panel"></div>
+            <img 
+                id=":black:king"
+                src="img/black-king.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":black:queen"
+                src="img/black-queen.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":black:rook"
+                src="img/black-rook.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":black:bishop"
+                src="img/black-bishop.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":black:knight"
+                src="img/black-knight.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":black:pawn"
+                src="img/black-pawn.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":white:king"
+                src="img/white-king.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":white:queen"
+                src="img/white-queen.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":white:rook"
+                src="img/white-rook.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":white:bishop"
+                src="img/white-bishop.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":white:knight"
+                src="img/white-knight.png"
+                width="60"
+                height="60"
+                class="hidden">
+            <img 
+                id=":white:pawn"
+                src="img/white-pawn.png"
+                width="60"
+                height="60"
+                class="hidden">
+        </div>
+        <div id="buttons">
+            <button id=":mybutton">Back</button>
+        </div>
+    </div>
+
+    {% style "/assets/bootstrap/css/bootstrap.min.css" %}
+    {% style "/assets/font-awesome/css/font-awesome.min.css" %}
+    {% style "/css/screen.css" %}
+
+    <script type="text/javascript">
+        var context = "{{servlet-context}}";
+        var csrfToken = "{{csrf-token}}";
+    </script>
+    {% script "/js/app.js" %}
+  </body>
+</html>
+
