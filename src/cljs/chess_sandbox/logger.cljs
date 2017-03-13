@@ -27,5 +27,5 @@
     (.appendChild
       content
       (js/document.createTextNode
-        (str @state/counter "." (move-rep src dst) " ")))))
+        (str @state/move-counter "." (move-rep src dst) " ")))))
 

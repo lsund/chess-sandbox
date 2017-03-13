@@ -5,7 +5,7 @@
       (:require [chess-sandbox.util :as util]))
 
 
-(def counter (atom 0))
+(def move-counter (atom 0))
 
 ;; A portable notation for describing a position:
 ;; A string of length 64 where each character describes one square starting at
@@ -30,5 +30,5 @@
 
 (def position (atom (util/string-to-position (first @position-strings))))
 
-(def focused (atom {:square nil :piece nil}))
+(def selected (atom {:square nil :piece nil}))
 

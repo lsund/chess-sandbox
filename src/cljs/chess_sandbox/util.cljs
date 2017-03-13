@@ -36,4 +36,4 @@
 
 (defn position-to-string
   [pos]
-  (apply str (map (fn [[x y]] (pce-str y)) (sort pos))))
+    (apply str (map (fn [[x y]] (pce-str y)) (sort pos))))

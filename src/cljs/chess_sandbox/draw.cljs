@@ -10,7 +10,7 @@
 
 (def color-light "#c2c2a3")
 (def color-dark "#4d4d33")
-(def color-focused "#ffffff")
+(def color-selected "#ffffff")
 
 (def canvas (dom/getElement ":mycanvas"))
 (def ctx (.getContext canvas "2d"))
@@ -36,7 +36,7 @@
             :let [cx (* x sqr-dim) 
                   cy (* y sqr-dim)
                   c (cond
-                      (= [x y] (@state/focused :square)) color-focused
+                      (= [x y] (@state/selected :square)) color-selected
                       (and (even? x) (even? y)) color-light
                       (and (even? x) (odd? y))  color-dark
                       (and (odd? x) (even? y))  color-dark
