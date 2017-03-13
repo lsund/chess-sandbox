@@ -15,3 +15,12 @@ To start a web server for the application, you'll have to run both servers
     lein figwheel
     lein run
 
+## TODO
+
+This is a work in progress! The obvious shortcoming is that any piece may move
+anywhere on the board not occupied by the same color.
+
+Possible extensions:
+1. Turn based mode
+2. Save/Load PGN files
+
