@@ -60,8 +60,8 @@
                  :pretty-print false
                  :closure-warnings
                  {:externs-validation :off :non-standard-jsdoc :off}}}}}
-             
-             
+
+
              :aot :all
              :uberjar-name "chess-sandbox.jar"
              :source-paths ["env/prod/clj"]
